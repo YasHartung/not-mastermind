@@ -117,16 +117,16 @@ export default class GameContainer extends React.Component {
 				j++;
 			}
 		}
-		console.log("Current guess after black feedback", guess)
+		
 		if(!feedback.includes("grey")){
 			this.gameover();
 		}
 		for(let i=0; i<4; i++){
 			if(guess[i]){
-				console.log("uncheck index", i)
+			
 				for(let k = 0; k<4; k++){
 					if(i !== k && guess[i]===win[k]){
-						console.log("current slot index", k, "matched for white")
+					
 						guess[i] = null;
 						win[k]=null;
 						feedback[j] = "white";
@@ -134,9 +134,7 @@ export default class GameContainer extends React.Component {
 						break;
 					}
 				}
-				console.log("GUESS arr after index",i , guess)
-
-				console.log("WIN arr after index",i , win)
+				
 			}
 		}
 		newFeedback = this.state.feedbackBoard.map((slot, index) => {
