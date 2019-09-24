@@ -3,7 +3,7 @@ import { Text, View, Button } from 'react-native'
 import Score from '../components/Score'
 import ColorSlots from '../components/ColorSlots'
 import ColorPicker from '../components/ColorPicker'
-let colors =["#F5EEEA", "#F5EEEA", "#F5EEEA", "#F5EEEA", "#890D96", "#890D96", "#890D96", "#890D96", "#FC8012", "#FC8012", "#FC8012", "#FC8012","#0B9797", "#0B9797", "#0B9797", "#0B9797","#ec1037", "#ec1037", "#ec1037", "#ec1037", "#1C47A8", "#1C47A8", "#1C47A8", "#1C47A8"]
+let colors =["#F5EEEA", "#890D96", "#FC8012", "#0B9797", "#ec1037", "#1C47A8"]
 let empty =['grey', 'grey', 'grey', 'grey']
 let emptyBoard = [[...empty], [...empty], [...empty], [...empty], [...empty], [...empty], [...empty], [...empty]]
 
@@ -55,20 +55,14 @@ export default class GameContainer extends React.Component {
 		}
 	}
 
-	shuffle = (a) => {
-	    var j, x, i;
-	    for (i = a.length - 1; i > 0; i--) {
-	        j = Math.floor(Math.random() * (i + 1));
-	        x = a[i];
-	        a[i] = a[j];
-	        a[j] = x;
-	    }
-	    return a;
-	}
 
 	generateWinningColors = () => {
-		let randomColors = this.shuffle(colors)
-		return randomColors.slice(0, 4)
+		let randomColors = []
+		for(let i=0; i<4; i++){
+			randomColors[i] = colors[Math.floor(Math.random() * colors.length)]
+		}
+		
+		return randomColors;
 	}
 
 	componentDidMount(){
