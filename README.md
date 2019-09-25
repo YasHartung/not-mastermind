@@ -8,4 +8,4 @@ React Native, Custom CSS
 
 Video demo: https://www.youtube.com/watch?v=yaGIcWIKyWM
 
-Backend: https://github.com/carlypecora/not-mastermind-backend
+Backend: https://github.com/YasHartung/not-mastermind-backend
